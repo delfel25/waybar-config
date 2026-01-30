@@ -8,7 +8,7 @@ Fonts required: Lexend, JetBrainsMono NFP (or any other Nerd Font Propo variant)
 
 ## Screenshot
 
-![waybar](https://i.imgur.com/puJrg4i.png)
+![waybar](/images/image.png)
 
 ## Credits
 
