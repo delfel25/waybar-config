@@ -7,43 +7,15 @@
 }
 
 window#waybar {
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  background-color: #11111b;
-  /* background-color: rgba(24, 24, 37, 0.6); */
+  background-color: transparent;
 }
 
-#workspaces button {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
-
-#workspaces button:hover {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
-}
-
-#workspaces button.active {
-  background-color: #1e1e2e;
-  color: #89b4fa;
-}
-
-#workspaces button.urgent {
-  background-color: #1e1e2e;
-  color: #f38ba8;
-}
-
+#workspaces button,
 #clock,
+#clock.simpleclock,
 #pulseaudio,
 #custom-logo,
 #custom-power,
-#custom-spotify,
 #custom-notification,
 #cpu,
 #tray,
@@ -53,64 +25,166 @@ window#waybar {
   padding: 0.3rem 0.6rem;
   margin: 0.4rem 0.25rem;
   border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
+  background-color: #3a3a3a;
+  color: #d0d0d0;
+  border: 2px solid #4a4a4a;
+}
+
+@keyframes warmGreenGrayBorder {
+  0% {
+    border-color: #1DB954;
+    border-top-color: #8a8fa3;
+  }
+  25% {
+    border-color: #8a8fa3;
+    border-right-color: #1DB954;
+  }
+  50% {
+    border-color: #1DB954;
+    border-bottom-color: #8a8fa3;
+  }
+  75% {
+    border-color: #8a8fa3;
+    border-left-color: #1DB954;
+  }
+  100% {
+    border-color: #1DB954;
+    border-top-color: #8a8fa3;
+  }
+}
+
+#workspaces button:hover,
+#clock:hover,
+#clock.simpleclock:hover,
+#pulseaudio:hover,
+#custom-notification:hover,
+#cpu:hover,
+#memory:hover,
+#tray:hover,
+#custom-power:hover {
+  animation: warmGreenGrayBorder 2s infinite linear;
+}
+
+#mpris {
+  background-color: #323232; 
+  color: #1DB954;
+  border: 2px solid #1DB954; 
+  animation: warmGreenGrayBorder 3s infinite linear;
+}
+
+#mpris:hover {
+  animation: warmGreenGrayBorder 1.5s infinite linear;
+  background-color: #3a3a3a;
 }
 
 #mpris.playing {
-  color: #a6e3a1;
+  color: #1DB954;
+  border-color: #1DB954;
 }
 
 #mpris.paused {
-  color: #9399b2;
+  color: #7a7a7a;
+  border-color: #5a5a5a;
+  animation: none;
+}
+
+#cpu { 
+  color: #aaaaaa;
+  background-color: #3a3a3a;
+}
+
+#memory { 
+  color: #bbbbbb;
+  background-color: #3a3a3a;
+}
+
+#clock { 
+  color: #acacac;
+  background-color: #3a3a3a;
+}
+
+#clock.simpleclock { 
+  color: #999999;
+  background-color: #3a3a3a;
+}
+
+#window { 
+  color: #d0d0d0;
+  background-color: #3a3a3a;
+}
+
+#pulseaudio { 
+  color: #999999; 
+  background-color: #3a3a3a;
+}
+
+#pulseaudio.muted { 
+  color: #666666; 
+  opacity: 0.8; 
+  background-color: #3a3a3a;
+}
+
+#custom-notification { 
+  color: #cccccc; 
+  background-color: #3a3a3a;
+}
+
+#custom-notification:hover { 
+  color: #1DB954; 
+}
+
+#custom-power { 
+  color: #aaaaaa;
+  background-color: #3a3a3a;
+}
+
+#custom-power:hover { 
+  color: #cccccc; 
+  border-color: #cccccc;
+}
+
+#workspaces button { 
+  background-color: #323232;
+  color: #a0a0a0;
+}
+
+#workspaces button:hover { 
+  color: #2a2a2a; 
+  background-color: #cccccc;
+}
+
+#workspaces button.active { 
+  background-color: #323232;
+  color: #999999; 
+  border-color: #999999;
+}
+
+#workspaces button.urgent { 
+  background-color: #323232;
+  color: #888888;
+  border-color: #888888;
+}
+
+#tray {
+  color: #a0a0a0; 
+  background-color: #3a3a3a; 
+}
+
+tooltip {
+  background-color: #323232;
+  border: 2px solid #555555;
+  border-radius: 8px;
+  color: #d0d0d0;
 }
 
 #custom-sep {
   padding: 0px;
-  color: #585b70;
+  color: #666666;
+  border: none;
+  background: transparent;
 }
 
 window#waybar.empty #window {
   background-color: transparent;
-}
-
-#cpu {
-  color: #94e2d5;
-}
-
-#memory {
-  color: #cba6f7;
-}
-
-#clock {
-  color: #74c7ec;
-}
-
-#clock.simpleclock {
-  color: #89b4fa;
-}
-
-#window {
-  color: #cdd6f4;
-}
-
-#pulseaudio {
-  color: #b4befe;
-}
-
-#pulseaudio.muted {
-  color: #a6adc8;
-}
-
-#custom-logo {
-  color: #89b4fa;
-}
-
-#custom-power {
-  color: #f38ba8;
-}
-
-tooltip {
-  background-color: #181825;
-  border: 2px solid #89b4fa;
+  border: none;
 }
